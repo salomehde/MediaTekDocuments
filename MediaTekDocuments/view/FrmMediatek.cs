@@ -44,7 +44,7 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void FrmMediatek_Shown(object sender, EventArgs e)
         {
-            if (this.Text == "Gestion des documents de la médiathèque: prets")
+            if (this.Text == "Gestion des documents de la médiathèque: Service Prets")
             {
                 AccesPrets();
             }

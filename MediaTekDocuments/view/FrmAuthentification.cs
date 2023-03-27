@@ -53,7 +53,7 @@ namespace MediaTekDocuments.view
                 {
                     MessageBox.Show("Authentification réussie", "Connexion");
                     FrmMediatek frmMediatek = new FrmMediatek();
-                    frmMediatek.Text = "Gestion des documents de la médiathèque: prets";
+                    frmMediatek.Text = "Gestion des documents de la médiathèque: Service Prets";
                     frmMediatek.ShowDialog();
                     this.Close();
 
