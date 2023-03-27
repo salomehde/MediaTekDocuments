@@ -201,15 +201,7 @@ namespace MediaTekDocuments.controller
         public bool ExemplaireAbonnement(Abonnement abonnement)
         {
             List<Exemplaire> Exemplaires = GetExemplairesRevue(abonnement.IdRevue);
-            bool parution = false;
-            foreach (Exemplaire exemplaire in Exemplaires)
-            {
-                if(ParutionDansAbonnement(abonnement.DateCommande, abonnement.DateFinAbonnement, exemplaire.DateAchat))
-                {
-                    parution = true;
-                }
-            }
-            return parution;
+            return !Exemplaires.Any(exemplaire => ParutionDansAbonnement(abonnement.DateCommande, abonnement.DateFinAbonnement, exemplaire.DateAchat));
         }
 
         /// <summary>

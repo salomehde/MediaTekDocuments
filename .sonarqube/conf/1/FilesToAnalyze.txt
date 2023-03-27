@@ -1,0 +1,9 @@
+﻿D:\Visual Studio tests\MediaTekDocuments\MediaTekDocumentsTests\controller\FrmMediatekControllerTests.cs
+D:\Visual Studio tests\MediaTekDocuments\MediaTekDocumentsTests\Properties\AssemblyInfo.cs
+D:\Visual Studio tests\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\Visual Studio tests\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\Visual Studio tests\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\Visual Studio tests\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.resources.dll
+D:\Visual Studio tests\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.resources.dll
+D:\Visual Studio tests\MediaTekDocuments\packages\MSTest.TestAdapter.2.1.1\build\_common\fr\Microsoft.VisualStudio.TestPlatform.TestFramework.resources.dll
+D:\Visual Studio tests\MediaTekDocuments\MediaTekDocumentsTests\packages.config

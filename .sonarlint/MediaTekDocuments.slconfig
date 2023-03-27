@@ -1,0 +1,16 @@
+{
+  "ServerUri": "http://localhost:9000/",
+  "Organization": null,
+  "ProjectKey": "MediaTekDocuments",
+  "ProjectName": "MediaTekDocuments",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "AYaz6mTwPt88IpuN9dkQ",
+      "ProfileTimestamp": "2023-03-05T22:35:28Z"
+    },
+    "Secrets": {
+      "ProfileKey": "AYaz6mPyPt88IpuN9dZ4",
+      "ProfileTimestamp": "2023-03-05T22:35:28Z"
+    }
+  }
+}
