@@ -14,7 +14,6 @@ namespace MediaTekDocuments.view
 {
     public partial class FrmAlerteAbonnement : Form
     {
-        private readonly FrmMediatekController controller;
         private readonly BindingSource bdgAbonnements = new BindingSource();
 
         /// <summary>

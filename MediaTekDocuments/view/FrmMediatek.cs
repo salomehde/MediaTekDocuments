@@ -44,6 +44,25 @@ namespace MediaTekDocuments.view
         /// <param name="e"></param>
         private void FrmMediatek_Shown(object sender, EventArgs e)
         {
+            if (this.Text == "Gestion des documents de la médiathèque: prets")
+            {
+                AccesPrets();
+            }
+            else
+            {
+                AccesAdmin();
+            }
+        }
+
+        public void AccesPrets()
+        {
+            tabOngletsApplication.TabPages.Remove(tabCommandesLivres);
+            tabOngletsApplication.TabPages.Remove(tabCommandesDVD);
+            tabOngletsApplication.TabPages.Remove(tabCommandesRevues);
+        }
+
+        public void AccesAdmin()
+        {
             FrmAlerteAbonnement FrmAlerteAbonnement = new FrmAlerteAbonnement(controller);
             FrmAlerteAbonnement.StartPosition = FormStartPosition.CenterParent;
             FrmAlerteAbonnement.ShowDialog();
@@ -1368,7 +1387,6 @@ namespace MediaTekDocuments.view
             else
             {
                 bdgCommandesLivre.DataSource = null;
-                MessageBox.Show("Ton code c'est de la merde", "Erreur");
             }
         }
 

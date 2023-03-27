@@ -379,11 +379,26 @@ namespace MediaTekDocuments.dal
         /// <summary>
         /// Retourne les abonnements se terminant dans moins de 30 jours
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Liste d'objets FinAbonnement</returns>
         public List<FinAbonnement> GetFinAbonnement()
         {
             List<FinAbonnement> lesFinAbonnements = TraitementRecup<FinAbonnement>(GET, "finabonnement");
             return lesFinAbonnements;
+        }
+
+        /// <summary>
+        /// Récupère l'utilisateur qui correspond au login
+        /// </summary>
+        /// <param name="login"></param>
+        /// /// <returns>l'utilisateur</returns>
+        public Utilisateur GetAuthentification(string login)
+        {
+            List<Utilisateur> liste = TraitementRecup<Utilisateur>(GET, "utilisateur/" + login);
+            if (liste == null || liste.Count == 0)
+            {
+                return null;
+            }
+            return (liste[0]);
         }
     }
 }
