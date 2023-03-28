@@ -6,6 +6,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using System.Configuration;
+using Serilog;
+using Serilog.Formatting.Json;
 
 
 namespace MediaTekDocuments.dal
@@ -57,12 +59,17 @@ namespace MediaTekDocuments.dal
             String authenticationString;
             try
             {
+                Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Verbose()
+                    .WriteTo.File(new JsonFormatter(), "logs/log.txt", rollingInterval: RollingInterval.Day)
+                    .CreateLogger();
                 authenticationString = GetConnectionStringByName(connectionName);
                 api = ApiRest.GetInstance(uriApi, authenticationString);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                Log.Fatal("Access.Access, Impossible d'accéder à l'API :" + e.Message);
                 Environment.Exit(0);
             }
         }
@@ -191,6 +198,7 @@ namespace MediaTekDocuments.dal
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Log.Error("Access.CreerExemplaire, jsonExemplaire={0} erreur={1}", jsonExemplaire, ex.Message);
             }
             return false; 
         }
@@ -223,10 +231,12 @@ namespace MediaTekDocuments.dal
                 else
                 {
                     Console.WriteLine("code erreur = " + code + " message = " + (String)retour["message"]);
+                    Log.Error("Access.TraitementRecup, code erreur={0} message={1}", code, (String)retour["message"]);
                 }
             }catch(Exception e)
             {
                 Console.WriteLine("Erreur lors de l'accès à l'API : "+e.Message);
+                Log.Error("Access.TraitementRecup, erreur lors de l'accès à l'API :" + e.Message);
                 Environment.Exit(0);
             }
             return liste;
@@ -290,6 +300,7 @@ namespace MediaTekDocuments.dal
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Log.Error("Access.CreerCommandeDocument, jsonCommandeDocument={0} erreur={1}", jsonCommandeDocument, ex.Message);
             }
             return false;
         }
@@ -312,6 +323,7 @@ namespace MediaTekDocuments.dal
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Log.Error("Access.ModifierCommandeDocument, jsonCommandeDocument={0} erreur={1}", jsonCommandeDocument, ex.Message);
             }
             return false;
         }
@@ -334,6 +346,7 @@ namespace MediaTekDocuments.dal
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Log.Error("Access.SupprimerCommandeDocument, jsonCommandeDocument={0} erreur={1}", jsonCommandeDocument, ex.Message);
             }
             return false;
         }
@@ -368,6 +381,7 @@ namespace MediaTekDocuments.dal
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Log.Error("Access.CreerCommandeRevue, jsonCommandeDocument={0} erreur={1}", jsonAbonnement, ex.Message);
             }
             return false;
         }
@@ -390,6 +404,7 @@ namespace MediaTekDocuments.dal
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Log.Error("Access.SupprimerCommandeRevue, jsonCommandeDocument={0} erreur={1}", jsonAbonnement, ex.Message);
             }
             return false;
         }
@@ -411,12 +426,21 @@ namespace MediaTekDocuments.dal
         /// /// <returns>l'utilisateur</returns>
         public Utilisateur GetAuthentification(string login)
         {
-            List<Utilisateur> liste = TraitementRecup<Utilisateur>(GET, "utilisateur/" + login);
-            if (liste == null || liste.Count == 0)
+            try
             {
+                List<Utilisateur> liste = TraitementRecup<Utilisateur>(GET, "utilisateur/" + login);
+                if (liste == null || liste.Count == 0)
+                {
+                    return null;
+                }
+                return (liste[0]);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Log.Error("Access.GetAuthentification, login={0} erreur={1}", login, ex.Message);
                 return null;
             }
-            return (liste[0]);
         }
     }
 }
