@@ -58,6 +58,14 @@ namespace MediaTekDocuments.view
                     this.Close();
 
                 }
+                else if(user.IdService.Equals(1))
+                {
+                    MessageBox.Show("Authentification réussie", "Connexion");
+                    FrmMediatek frmMediatek = new FrmMediatek();
+                    frmMediatek.Text = "Gestion des documents de la médiathèque: Service Administratif";
+                    frmMediatek.ShowDialog();
+                    this.Close();
+                }
                 else
                 {
                     MessageBox.Show("Authentification réussie", "Connexion");

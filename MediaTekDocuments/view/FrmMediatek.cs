@@ -31,7 +31,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Constructeur : création du contrôleur lié à ce formulaire
         /// </summary>
-        internal FrmMediatek()
+        public FrmMediatek()
         {
             InitializeComponent();
             this.controller = new FrmMediatekController();
@@ -48,7 +48,7 @@ namespace MediaTekDocuments.view
             {
                 AccesPrets();
             }
-            else
+            else if(this.Text == "Gestion des documents de la médiathèque: Service Administratif")
             {
                 AccesAdmin();
             }
