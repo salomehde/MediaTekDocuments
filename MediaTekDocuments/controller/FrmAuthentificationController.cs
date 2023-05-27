@@ -9,6 +9,9 @@ using System.Windows.Forms;
 
 namespace MediaTekDocuments.controller
 {
+    /// <summary>
+    /// Contrôleur de la fenêtre d'authentification
+    /// </summary>
     public class FrmAuthentificationController
     {
         /// <summary>

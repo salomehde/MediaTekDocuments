@@ -54,6 +54,9 @@ namespace MediaTekDocuments.view
             }
         }
 
+        /// <summary>
+        /// supprime l'accès aux onglets de commandes livres, dvd et revues
+        /// </summary>
         public void AccesPrets()
         {
             tabOngletsApplication.TabPages.Remove(tabCommandesLivres);
@@ -61,6 +64,9 @@ namespace MediaTekDocuments.view
             tabOngletsApplication.TabPages.Remove(tabCommandesRevues);
         }
 
+        /// <summary>
+        /// affiche la fenêtre montrant les revues dont l'abonnement se termine dans moins de 30 jours
+        /// </summary>
         public void AccesAdmin()
         {
             FrmAlerteAbonnement FrmAlerteAbonnement = new FrmAlerteAbonnement(controller);
@@ -1689,7 +1695,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Methode d'affichage des informations du dvd sélectionné dans l'onglet des commandes de dvd
         /// </summary>
-        /// <param name="livre">le livre</param>
+        /// <param name="dvd">le livre</param>
         private void AfficherCmdDvdInfos(Dvd dvd)
         {
             txbCmdDvdNumero.Text = dvd.Id;
@@ -2023,7 +2029,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Methode d'affichage des informations de la revue sélectionnée dans l'onglet des commandes de revue
         /// </summary>
-        /// <param name="livre">le livre</param>
+        /// <param name="revue">le livre</param>
         private void AfficherCmdRevuesInfos(Revue revue)
         {
             txbCmdRevuesPeriodicite.Text = revue.Periodicite;
@@ -2052,7 +2058,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Remplit le dataGridView avec la liste des commandes de la revue reçue en paramètre
         /// </summary>
-        /// <param name="lescommandesdocument">liste des commandes</param>
+        /// <param name="lescommandesabonnement">liste des commandes</param>
         private void RemplirCommandesRevuesListe(List<Abonnement> lescommandesabonnement)
         {
             if (lescommandesabonnement != null)
@@ -2121,7 +2127,7 @@ namespace MediaTekDocuments.view
         /// Récupère les informations de commande d'une revue
         /// et initialise les éléments correspondants
         /// </summary>
-        /// <param name="commandeDocument"></param>
+        /// <param name="abonnement"></param>
         private void AfficherCommandeRevue(Abonnement abonnement)
         {
             txbCmdRevuesMontant.Text = abonnement.Montant.ToString();

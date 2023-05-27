@@ -101,10 +101,13 @@ namespace SpecFlowMediaTekDocuments.Features
             {
                 this.ScenarioStart();
 #line 4
-    testRunner.Given("je saisis le titre du livre \'Catastrophes au Brésil\' dans txbLivresTitreRecherche" +
-                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("je me trouve dans l\'onglet Livre", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 5
+    testRunner.When("je saisis le titre du livre \'Catastrophes au Brésil\' dans txbLivresTitreRecherche" +
+                        "", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 6
     testRunner.Then("les informations du livre sont affichées, avec le titre \'Catastrophes au Brésil\' " +
                         "et l\'auteur \'Philippe Masson\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -119,7 +122,7 @@ namespace SpecFlowMediaTekDocuments.Features
             string[] tagsOfScenario = ((string[])(null));
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Recherche par le numéro de document", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 7
+#line 8
   this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -139,13 +142,16 @@ namespace SpecFlowMediaTekDocuments.Features
             else
             {
                 this.ScenarioStart();
-#line 8
-    testRunner.Given("je saisis le numéro de document \'00017\' dans txbLivresNumRecherche", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 9
-    testRunner.When("je clique sur le bouton \'Rechercher\' btnLivresNumRecherche", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("je me trouve dans l\'onglet Livre", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
+    testRunner.Given("je saisis le numéro de document \'00017\' dans txbLivresNumRecherche", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 11
+    testRunner.When("je clique sur le bouton \'Rechercher\' btnLivresNumRecherche", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 12
     testRunner.Then("les informations du livre sont affichées, avec le titre \'Catastrophes au Brésil\' " +
                         "et l\'auteur \'Philippe Masson\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden

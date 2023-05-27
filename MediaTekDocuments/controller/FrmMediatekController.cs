@@ -110,7 +110,7 @@ namespace MediaTekDocuments.controller
 
         /// <summary>
         /// récupère les commandes d'un document
-        /// </summary
+        /// </summary>
         /// <param name="idDocument">id du document concerné</param>
         /// <returns>Liste d'objets Commandedocument</returns>
         public List<CommandeDocument> GetCommandesDocument(string idDocument)
@@ -161,9 +161,7 @@ namespace MediaTekDocuments.controller
         /// <summary>
         /// Crée une commande d'une revue dans la bdd
         /// </summary>
-        /// <param name="id">L'objet Commande concerné</param>
-        /// <param name="dateFinAbonnement">L'objet Commande concerné</param>
-        /// <param name="idRevue">L'objet Commande concerné</param>
+        /// <param name="abonnement">l'objet commande revue concerné</param>
         /// <returns>true si la création a pu se faire</returns>
         public bool CreerCommandeRevue(Abonnement abonnement)
         {
@@ -173,7 +171,7 @@ namespace MediaTekDocuments.controller
         /// <summary>
         /// Supprimer une commande revue dans la bdd
         /// </summary>
-        /// <param name="Abonnement">l'objet commande revue concerné</param>
+        /// <param name="abonnement">l'objet commande revue concerné</param>
         /// <returns>true si la suppression a pu se faire</returns>
         public bool SupprimerCommandeRevue(Abonnement abonnement)
         {

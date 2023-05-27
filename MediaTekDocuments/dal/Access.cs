@@ -64,6 +64,7 @@ namespace MediaTekDocuments.dal
                     .WriteTo.File(new JsonFormatter(), "logs/log.txt", rollingInterval: RollingInterval.Day)
                     .CreateLogger();
                 authenticationString = GetConnectionStringByName(connectionName);
+                //authenticationString = "admin:adminpwd";
                 api = ApiRest.GetInstance(uriApi, authenticationString);
             }
             catch (Exception e)

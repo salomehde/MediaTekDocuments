@@ -19,9 +19,20 @@ namespace SpecFlowMediaTekDocuments.Steps
         private readonly FrmMediatek frmMediatek = new FrmMediatek();
 
         /// <summary>
+        /// Etre sur l'onglet des Livres
+        /// </summary>
+        [Given(@"je me trouve dans l'onglet Livre")]
+        public void GivenJeMeTrouveDansLongletLivre()
+        {
+            TabPage tabLivres = (TabPage)frmMediatek.Controls["tabOngletsApplication"].Controls["tabLivres"];
+            frmMediatek.Visible = true;
+            tabLivres.Text = "Livres";
+        }
+
+        /// <summary>
         /// Saisie du titre du livre dans le textbox
         /// </summary>
-        [Given(@"je saisis le titre du livre 'Catastrophes au Brésil' dans txbLivresTitreRecherche")]
+        [When(@"je saisis le titre du livre 'Catastrophes au Brésil' dans txbLivresTitreRecherche")]
         public void GivenJeSaisisLeTitreDuLivreDansTxbLivresTitreRecherche()
         {
             TextBox txbLivresTitreRecherche = (TextBox)frmMediatek.Controls["tabOngletsApplication"].Controls["tabLivres"].Controls["grpLivresRecherche"].Controls["txbLivresTitreRecherche"];

@@ -29,7 +29,7 @@ namespace MediaTekDocuments.view
         /// <summary>
         /// Remplit le dataGridView avec la liste des abonnements qui vont se terminer
         /// </summary>
-        /// <param name="lesAbonnementsAEcheance"></param>
+        /// <param name="lesFinAbonnements"></param>
         private void RemplirFinAbonnements(List<FinAbonnement> lesFinAbonnements)
         {
             bdgAbonnements.DataSource = lesFinAbonnements;
